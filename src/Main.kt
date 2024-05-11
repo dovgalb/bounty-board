@@ -1,5 +1,11 @@
 var playerLevel = 2
 const val HERO_NAME = "Madrigal"
+const val TAVERN_NAME = "Рог единорога"
+var stable: Boolean = false
+var money = 50
+val innKeeper: String = ""
+val tavernMenu: List<String> = listOf("Мед", "Вино", "пиво")
+
 var hasSteed = false
 
 
@@ -11,7 +17,7 @@ fun main() {
     checkSteed()
     getSteed()
     checkSteed()
-
+    println(useMagicMirror(HERO_NAME))
 }
 
 fun levelUp(hero: String, playerLevel: Int, score: Int = 1): Int {
@@ -36,4 +42,8 @@ fun checkSteed() {
     } else {
         println("У $HERO_NAME нет коня!")
     }
+}
+
+fun useMagicMirror(character: String): String {
+    return character.reversed()
 }
